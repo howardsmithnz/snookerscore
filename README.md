@@ -1,3 +1,3 @@
 # snookerscore
 
-### a React app whcih tracks the score of a snooker game
+a React app which tracks the score of a snooker game
