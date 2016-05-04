@@ -7,19 +7,26 @@ export default class Scoreboard extends React.Component {
   constructor () {
     super()
     this.state = {
-      playerName1: 'McManus',
-      playerScore1: 0,
-      playerName2: 'Hendry',
-      playerScore2: 0,
+      currentPlayer: 'player1',
+      player1: {
+        playerName: 'Smith',
+        playerScore: 10,
+      },
+      player2: {
+        playerName: 'Brown',
+        playerScore: 3,
+      }
     }
   }
 
   changeScore (score, player) {
     console.log('Changing score...')
     if (player == 'player1') {
-      this.setState({playerScore1: this.state.playerScore1 + score})
+      console.log('In 1...')
+      this.setState({player1: {playerScore: this.state.player1.playerScore + score}})
     } else {
-      this.setState({playerScore2: this.state.playerScore2 + score})
+      console.log('In 2...')
+      this.setState({playerScore2: this.state.player2.playerScore + score})
     }
   }
 
@@ -27,8 +34,8 @@ export default class Scoreboard extends React.Component {
     return (
     <div>
       <EnterScore changeScore={this.changeScore.bind(this)} />
-      <PlayerScoreboard playerName={this.state.playerName1} playerScore={this.state.playerScore1} />
-      <PlayerScoreboard playerName={this.state.playerName2} playerScore={this.state.playerScore2} />
+      <PlayerScoreboard playerName={this.state.player1.playerName} playerScore={this.state.player1.playerScore} />
+      <PlayerScoreboard playerName={this.state.player2.playerName} playerScore={this.state.player2.playerScore} />
     </div>
     )
   }
