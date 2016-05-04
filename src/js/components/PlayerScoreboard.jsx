@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BreakList from './BreakList'
+import BreakList from './BreakList.jsx'
 
 export default class PlayerScoreBoard extends React.Component {
   render () {
