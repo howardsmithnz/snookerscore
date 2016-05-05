@@ -19,14 +19,14 @@ export default class Scoreboard extends React.Component {
     }
   }
 
-  changeScore (score, player) {
+  changeScore (score) {
     console.log('Changing score...')
-    if (player == 'player1') {
+    if (this.state.currentPlayer == 'player1') {
       console.log('In 1...')
       this.setState({player1: {playerName: this.state.player1.playerName, playerScore: this.state.player1.playerScore + score}})
     } else {
       console.log('In 2...')
-      this.setState({playerScore2: this.state.player2.playerScore + score})
+      this.setState({player2: {playerName: this.state.player2.playerName, playerScore: this.state.player2.playerScore + score}})
     }
   }
 
