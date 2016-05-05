@@ -30,10 +30,18 @@ export default class Scoreboard extends React.Component {
     }
   }
 
+  changePlayer () {
+    if (this.state.currentPlayer == 'player1') {
+      this.setState({currentPlayer: 'player2'})
+    } else {
+      this.setState({currentPlayer: 'player1'})
+    }
+  }
+
   render () {
     return (
     <div>
-      <EnterScore changeScore={this.changeScore.bind(this)} />
+      <EnterScore changeScore={this.changeScore.bind(this)} changePlayer={this.changePlayer.bind(this)} />
       <PlayerScoreboard playerName={this.state.player1.playerName} playerScore={this.state.player1.playerScore} />
       <PlayerScoreboard playerName={this.state.player2.playerName} playerScore={this.state.player2.playerScore} />
     </div>
