@@ -10,11 +10,11 @@ export default class Scoreboard extends React.Component {
       currentPlayer: 'player1',
       player1: {
         playerName: 'Smith',
-        playerScore: 10,
+        playerScore: 0,
       },
       player2: {
         playerName: 'Brown',
-        playerScore: 3,
+        playerScore: 0,
       }
     }
   }
