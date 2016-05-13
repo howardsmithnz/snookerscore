@@ -6,9 +6,9 @@ export default class PlayerScoreBoard extends React.Component {
   render () {
     return (
     <div>
-      <h3>{this.props.playerName}</h3>
-      <h3>{this.props.playerScore}</h3>
-      <BreakList />
+      <h3>Player: {this.props.playerName}</h3>
+      <h3>Score: {this.props.playerScore}</h3>
+      <BreakList currentBreak={this.props.currentBreak} />
     </div>
     )
   }

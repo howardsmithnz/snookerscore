@@ -11,10 +11,12 @@ export default class Scoreboard extends React.Component {
       player1: {
         playerName: 'Smith',
         playerScore: 0,
+        currentBreak: 100,
       },
       player2: {
         playerName: 'Brown',
         playerScore: 0,
+        currentBreak: 80,
       }
     }
   }
@@ -42,8 +44,8 @@ export default class Scoreboard extends React.Component {
     return (
     <div>
       <EnterScore changeScore={this.changeScore.bind(this)} changePlayer={this.changePlayer.bind(this)} />
-      <PlayerScoreboard playerName={this.state.player1.playerName} playerScore={this.state.player1.playerScore} />
-      <PlayerScoreboard playerName={this.state.player2.playerName} playerScore={this.state.player2.playerScore} />
+      <PlayerScoreboard playerName={this.state.player1.playerName} playerScore={this.state.player1.playerScore} currentBreak={this.state.player1.currentBreak} />
+      <PlayerScoreboard playerName={this.state.player2.playerName} playerScore={this.state.player2.playerScore} currentBreak={this.state.player2.currentBreak} />
     </div>
     )
   }
