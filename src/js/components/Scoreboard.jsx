@@ -27,18 +27,52 @@ export default class Scoreboard extends React.Component {
     console.log('Changing score...')
     if (this.state.currentPlayer == 'player1') {
       console.log('In 1...')
-      this.setState({player1: {playerName: this.state.player1.playerName, playerScore: this.state.player1.playerScore + score, currentBreakTotal: this.state.player1.currentBreakTotal + score, currentBreakSeq: this.state.player1.currentBreakSeq + ' - ' + score}})
+      this.setState(
+        {player1: {
+            playerName: this.state.player1.playerName,
+            playerScore: this.state.player1.playerScore + score,
+            currentBreakTotal: this.state.player1.currentBreakTotal + score,
+            currentBreakSeq: this.state.player1.currentBreakSeq + ' - ' + score
+          }
+        }
+      )
     } else {
       console.log('In 2...')
-      this.setState({player2: {playerName: this.state.player2.playerName, playerScore: this.state.player2.playerScore + score, currentBreakTotal: this.state.player2.currentBreakTotal + score, currentBreakSeq: this.state.player2.currentBreakSeq + ' - ' + score}})
+      this.setState(
+        {player2: {
+            playerName: this.state.player2.playerName,
+            playerScore: this.state.player2.playerScore + score,
+            currentBreakTotal: this.state.player2.currentBreakTotal + score,
+            currentBreakSeq: this.state.player2.currentBreakSeq + ' - ' + score
+          }
+        }
+      )
     }
   }
 
   changePlayer () {
     if (this.state.currentPlayer == 'player1') {
-      this.setState({currentPlayer: 'player2', player2: {playerName: this.state.player2.playerName, playerScore: this.state.player2.playerScore, currentBreakTotal: 0, currentBreakSeq: ''}})
+      this.setState(
+        {currentPlayer: 'player2',
+          player2: {
+            playerName: this.state.player2.playerName,
+            playerScore: this.state.player2.playerScore,
+            currentBreakTotal: 0,
+            currentBreakSeq: ''
+          }
+        }
+      )
     } else {
-      this.setState({currentPlayer: 'player1', player1: {playerName: this.state.player1.playerName, playerScore: this.state.player1.playerScore, currentBreakTotal: 0, currentBreakSeq: ''}})
+      this.setState(
+        {currentPlayer: 'player1',
+          player1: {
+            playerName: this.state.player1.playerName,
+            playerScore: this.state.player1.playerScore,
+            currentBreakTotal: 0,
+            currentBreakSeq: ''
+          }
+        }
+      )
     }
   }
 
