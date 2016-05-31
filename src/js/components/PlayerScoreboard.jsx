@@ -8,7 +8,7 @@ export default class PlayerScoreBoard extends React.Component {
     <div>
       <h3>Player: {this.props.playerName}</h3>
       <h3>Score: {this.props.playerScore}</h3>
-      <BreakList currentBreak={this.props.currentBreak} />
+      <BreakList currentBreakTotal={this.props.currentBreakTotal} currentBreakSeq={this.props.currentBreakSeq} />
     </div>
     )
   }

@@ -11,12 +11,14 @@ export default class Scoreboard extends React.Component {
       player1: {
         playerName: 'Smith',
         playerScore: 0,
-        currentBreak: 0,
+        currentBreakTotal: 0,
+        currentBreakSeq: ''
       },
       player2: {
         playerName: 'Brown',
         playerScore: 0,
-        currentBreak: 0,
+        currentBreakTotal: 0,
+        currentBreakSeq: ''
       }
     }
   }
@@ -25,18 +27,18 @@ export default class Scoreboard extends React.Component {
     console.log('Changing score...')
     if (this.state.currentPlayer == 'player1') {
       console.log('In 1...')
-      this.setState({player1: {playerName: this.state.player1.playerName, playerScore: this.state.player1.playerScore + score, currentBreak: this.state.player1.currentBreak + score}})
+      this.setState({player1: {playerName: this.state.player1.playerName, playerScore: this.state.player1.playerScore + score, currentBreakTotal: this.state.player1.currentBreakTotal + score, currentBreakSeq: this.state.player1.currentBreakSeq + ' - ' + score}})
     } else {
       console.log('In 2...')
-      this.setState({player2: {playerName: this.state.player2.playerName, playerScore: this.state.player2.playerScore + score, currentBreak: this.state.player2.currentBreak + score}})
+      this.setState({player2: {playerName: this.state.player2.playerName, playerScore: this.state.player2.playerScore + score, currentBreakTotal: this.state.player2.currentBreakTotal + score, currentBreakSeq: this.state.player2.currentBreakSeq + ' - ' + score}})
     }
   }
 
   changePlayer () {
     if (this.state.currentPlayer == 'player1') {
-      this.setState({currentPlayer: 'player2'})
+      this.setState({currentPlayer: 'player2', player2: {playerName: this.state.player2.playerName, playerScore: this.state.player2.playerScore, currentBreakTotal: 0, currentBreakSeq: ''}})
     } else {
-      this.setState({currentPlayer: 'player1'})
+      this.setState({currentPlayer: 'player1', player1: {playerName: this.state.player1.playerName, playerScore: this.state.player1.playerScore, currentBreakTotal: 0, currentBreakSeq: ''}})
     }
   }
 
@@ -44,8 +46,16 @@ export default class Scoreboard extends React.Component {
     return (
     <div>
       <EnterScore changeScore={this.changeScore.bind(this)} changePlayer={this.changePlayer.bind(this)} />
-      <PlayerScoreboard playerName={this.state.player1.playerName} playerScore={this.state.player1.playerScore} currentBreak={this.state.player1.currentBreak} />
-      <PlayerScoreboard playerName={this.state.player2.playerName} playerScore={this.state.player2.playerScore} currentBreak={this.state.player2.currentBreak} />
+      <PlayerScoreboard
+        playerName={this.state.player1.playerName}
+        playerScore={this.state.player1.playerScore}
+        currentBreakTotal={this.state.player1.currentBreakTotal}
+        currentBreakSeq={this.state.player1.currentBreakSeq} />
+      <PlayerScoreboard
+        playerName={this.state.player2.playerName}
+        playerScore={this.state.player2.playerScore}
+        currentBreakTotal={this.state.player2.currentBreakTotal}
+        currentBreakSeq={this.state.player2.currentBreakSeq} />
     </div>
     )
   }
