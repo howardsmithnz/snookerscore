@@ -9,13 +9,13 @@ export default class Scoreboard extends React.Component {
     this.state = {
       currentPlayer: 'player1',
       player1: {
-        playerName: 'Smith',
+        playerName: 'Higgins',
         playerScore: 0,
         currentBreakTotal: 0,
         currentBreakSeq: ''
       },
       player2: {
-        playerName: 'Brown',
+        playerName: 'White',
         playerScore: 0,
         currentBreakTotal: 0,
         currentBreakSeq: ''
@@ -77,7 +77,7 @@ export default class Scoreboard extends React.Component {
   }
 
   render () {
-    var divStyle = {color: 'red'}
+    var divStyle = {color: 'yellow'}
 
     return (
     <div style={divStyle}>
