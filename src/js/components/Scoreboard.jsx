@@ -77,11 +77,10 @@ export default class Scoreboard extends React.Component {
   }
 
   render () {
-    var divStyle = {color: 'yellow'}
+    var divStyle = {color: 'orange'}
 
     return (
     <div style={divStyle}>
-      <EnterScore changeScore={this.changeScore.bind(this)} changePlayer={this.changePlayer.bind(this)} />
       <PlayerScoreboard
         playerName={this.state.player1.playerName}
         playerScore={this.state.player1.playerScore}
@@ -92,6 +91,7 @@ export default class Scoreboard extends React.Component {
         playerScore={this.state.player2.playerScore}
         currentBreakTotal={this.state.player2.currentBreakTotal}
         currentBreakSeq={this.state.player2.currentBreakSeq} />
+      <EnterScore changeScore={this.changeScore.bind(this)} changePlayer={this.changePlayer.bind(this)} />
     </div>
     )
   }
