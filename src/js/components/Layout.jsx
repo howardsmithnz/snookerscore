@@ -8,7 +8,7 @@ export default class Layout extends React.Component {
   render () {
     return (
     <div>
-      <Header /> Hello! Let's score some snooker.
+      <Header message={'Wow'}/>
       <Scoreboard />
       <Footer />
     </div>

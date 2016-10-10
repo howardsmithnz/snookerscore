@@ -3,7 +3,10 @@ import React from 'react'
 export default class Header extends React.Component {
   render () {
     return (
-    <h1>Snooker Score</h1>
+      <div>
+        <h1>Snooker Score</h1>
+          <p> { this.props.message } </p>
+      </div>
     )
   }
 }
