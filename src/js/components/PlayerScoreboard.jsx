@@ -13,3 +13,7 @@ export default class PlayerScoreBoard extends React.Component {
     )
   }
 }
+
+PlayerScoreBoard.propTypes = {
+    playerScore: React.PropTypes.number
+}
