@@ -15,5 +15,8 @@ export default class PlayerScoreBoard extends React.Component {
 }
 
 PlayerScoreBoard.propTypes = {
-    playerScore: React.PropTypes.number
+  playerName: React.PropTypes.string,
+  playerScore: React.PropTypes.number,
+  params: React.PropTypes.object,
+  currentBreakTotal: React.PropTypes.number
 }
