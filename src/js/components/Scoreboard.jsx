@@ -85,7 +85,8 @@ export default class Scoreboard extends React.Component {
         playerName={this.state.player1.playerName}
         playerScore={this.state.player1.playerScore}
         currentBreakTotal={this.state.player1.currentBreakTotal}
-        currentBreakSeq={this.state.player1.currentBreakSeq} />
+        currentBreakSeq={this.state.player1.currentBreakSeq}
+      />
       <PlayerScoreboard
         playerName={this.state.player2.playerName}
         playerScore={this.state.player2.playerScore}
