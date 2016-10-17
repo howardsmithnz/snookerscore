@@ -91,7 +91,8 @@ export default class Scoreboard extends React.Component {
         playerName={this.state.player2.playerName}
         playerScore={this.state.player2.playerScore}
         currentBreakTotal={this.state.player2.currentBreakTotal}
-        currentBreakSeq={this.state.player2.currentBreakSeq} />
+        currentBreakSeq={this.state.player2.currentBreakSeq}
+      />
       <EnterScore changeScore={this.changeScore.bind(this)} changePlayer={this.changePlayer.bind(this)} />
     </div>
     )
